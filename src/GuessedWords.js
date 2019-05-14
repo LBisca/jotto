@@ -6,7 +6,9 @@ const GuessedWords = props => {
   let contents;
 
   if (props.guessedWords.length === 0) {
-    contents = <span data-test="guess-instructions">Guess a word</span>;
+    contents = (
+      <span data-test="guess-instructions">Try to guess a secred word!</span>
+    );
   } else {
     const guessedWordsRows = props.guessedWords.map((word, index) => (
       <tr data-test="guessed-word" key={`guessedWord_${index}`}>
@@ -18,8 +20,8 @@ const GuessedWords = props => {
     contents = (
       <div data-test="guessed-words">
         <h3>Guessed Words</h3>
-        <table>
-          <thead>
+        <table className="table table-sm">
+          <thead className="thead-light">
             <tr>
               <th>Guess</th>
               <th>Matching letters</th>
